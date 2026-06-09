@@ -50,15 +50,7 @@ export default function NewCard() {
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
-      <header style={{
-        background: 'var(--card)',
-        borderBottom: '1px solid var(--border)',
-        padding: '0 2rem',
-        height: '60px',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '1rem'
-      }}>
+      <header style={{ background: 'var(--card)', borderBottom: '1px solid var(--border)', padding: '0 2rem', height: '60px', display: 'flex', alignItems: 'center', gap: '1rem' }}>
         <Link href="/dashboard" style={{ color: 'var(--muted)', textDecoration: 'none', fontSize: '14px' }}>
           Retour
         </Link>
@@ -68,7 +60,9 @@ export default function NewCard() {
         <h1 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '1.75rem' }}>Creer une carte</h1>
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
           <div>
-            <label style={{ display: 'block', fontSize: '13px', fontWeight: 500, marginBottom: '6px' }}>Nom de la carte</label>
+            <label style={{ display: 'block', fontSize: '13px', fontWeight: 500, marginBottom: '6px' }}>
+              Nom de la carte
+            </label>
             <input
               type="text"
               value={name}
@@ -79,22 +73,15 @@ export default function NewCard() {
             />
           </div>
           <div>
-            <label style={{ display: 'block', fontSize: '13px', fontWeight: 500, marginBottom: '8px' }}>Type de carte</label>
+            <label style={{ display: 'block', fontSize: '13px', fontWeight: 500, marginBottom: '8px' }}>
+              Type de carte
+            </label>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               {cardTypes.map(t => (
                 <div
                   key={t.id}
                   onClick={() => setCardType(t.id)}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '12px',
-                    padding: '12px',
-                    border: cardType === t.id ? '2px solid var(--accent)' : '2px solid var(--border)',
-                    borderRadius: '10px',
-                    cursor: 'pointer',
-                    background: cardType === t.id ? 'var(--accent-light)' : 'var(--card)'
-                  }}
+                  style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px', border: cardType === t.id ? '2px solid var(--accent)' : '2px solid var(--border)', borderRadius: '10px', cursor: 'pointer', background: cardType === t.id ? 'var(--accent-light)' : 'var(--card)' }}
                 >
                   <span style={{ fontSize: '22px' }}>{t.icon}</span>
                   <div>
@@ -106,7 +93,9 @@ export default function NewCard() {
             </div>
           </div>
           <div>
-            <label style={{ display: 'block', fontSize: '13px', fontWeight: 500, marginBottom: '6px' }}>Description de la recompense</label>
+            <label style={{ display: 'block', fontSize: '13px', fontWeight: 500, marginBottom: '6px' }}>
+              Description de la recompense
+            </label>
             <input
               type="text"
               value={rewardDescription}
@@ -118,21 +107,11 @@ export default function NewCard() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div>
               <label style={{ display: 'block', fontSize: '13px', fontWeight: 500, marginBottom: '6px' }}>Couleur principale</label>
-              <input
-                type="color"
-                value={primaryColor}
-                onChange={e => setPrimaryColor(e.target.value)}
-                style={{ width: '100%', height: '44px', border: '1px solid var(--border)', borderRadius: '10px', cursor: 'pointer' }}
-              />
+              <input type="color" value={primaryColor} onChange={e => setPrimaryColor(e.target.value)} style={{ width: '100%', height: '44px', border: '1px solid var(--border)', borderRadius: '10px', cursor: 'pointer' }} />
             </div>
             <div>
               <label style={{ display: 'block', fontSize: '13px', fontWeight: 500, marginBottom: '6px' }}>Couleur texte</label>
-              <input
-                type="color"
-                value={secondaryColor}
-                onChange={e => setSecondaryColor(e.target.value)}
-                style={{ width: '100%', height: '44px', border: '1px solid var(--border)', borderRadius: '10px', cursor: 'pointer' }}
-              />
+              <input type="color" value={secondaryColor} onChange={e => setSecondaryColor(e.target.value)} style={{ width: '100%', height: '44px', border: '1px solid var(--border)', borderRadius: '10px', cursor: 'pointer' }} />
             </div>
           </div>
           {error && (
