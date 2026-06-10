@@ -21,8 +21,8 @@ export default function AuthPage() {
       const { data, error: signUpError } = await supabase.auth.signUp({ email, password })
       if (signUpError) { setError(signUpError.message); setLoading(false); return }
       if (data.user) await supabase.from('merchants').insert({ user_id: data.user.id, business_name: businessName })
-      setSuccess('Compte créé ! Vérifiez votre email pour confirmer.')
-      setLoading(false); return
+      router.push('/dashboard')
+return
     }
     const { error: loginError } = await supabase.auth.signInWithPassword({ email, password })
     if (loginError) { setError('Email ou mot de passe incorrect'); setLoading(false); return }
