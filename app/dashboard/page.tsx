@@ -92,7 +92,7 @@ export default function Dashboard() {
                   </div>
                   <div style={{ display: 'flex', gap: '8px' }}>
                     <button style={{ flex: 1, padding: '8px', background: 'var(--accent-light)', color: 'var(--accent)', border: 'none', borderRadius: '8px', fontSize: '13px', fontWeight: 500, cursor: 'pointer' }}>QR Code</button>
-                    <button style={{ flex: 1, padding: '8px', background: 'var(--bg)', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: '8px', fontSize: '13px', fontWeight: 500, cursor: 'pointer' }}>Modifier</button>
+                    <Link href={`/dashboard/edit-card/${card.id}`} style={{ flex: 1, padding: '8px', background: 'var(--bg)', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: '8px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', textDecoration: 'none', textAlign: 'center' }}>Modifier</Link>
                   </div>
                 </div>
               </div>
